@@ -14,8 +14,21 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+
+             // User can register with either email or phone
+            $table->string('email')->nullable()->unique();
+            $table->string('phone')->nullable()->unique();
+
+             // Verification
             $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('phone_verified_at')->nullable();
+
+            // Account approval
+            $table->enum('status', ['pending','approved','rejected',])->default('pending');
+
+            //Authorization
+            $table->string('role')->default('user');
+
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

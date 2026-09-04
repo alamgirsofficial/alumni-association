@@ -47,8 +47,23 @@ const mainNavItems: NavItem[] = [
 
     {
         title: 'Blogs',
-        href: dashboard(),
+        href:'#',
         icon: Users,
+        items: [
+            {
+                title: 'Blog List',
+                href: '/blog',
+            },
+            {
+                title: 'Create Blog',
+                href: '/blog/create',
+                icon: List,
+            },        
+            {
+                title: 'Edit Blog',
+                href: '/blog/edit',
+            }
+        ],
     },
     {
         title: 'Events',
