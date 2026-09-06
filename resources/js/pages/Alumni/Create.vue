@@ -13,6 +13,16 @@ import {
     UserPlus,
     UserRound,
 } from '@lucide/vue';
+defineOptions({
+    layout: {
+        breadcrumbs: [
+            {
+                title: 'Alumni Create',
+                // href: edit(),
+            },
+        ],
+    },
+});
 
 const showPassword = ref(false);
 

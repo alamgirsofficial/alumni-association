@@ -400,7 +400,7 @@ const submit = () => {
                             <div class="md:col-span-2">
 
                                 <label for="address" class="mb-2 block text-sm font-medium text-slate-700">
-                                    Address
+                                    Present Address
                                     <span class="text-red-500">*</span>
                                 </label>
 

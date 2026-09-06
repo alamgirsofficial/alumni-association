@@ -10,6 +10,16 @@ import {
     Clock3,
 } from '@lucide/vue';
 import { computed, ref, watch } from 'vue';
+defineOptions({
+    layout: {
+        breadcrumbs: [
+            {
+                title: 'Pending Alumni List',
+                // href: edit(),
+            },
+        ],
+    },
+});
 
 interface AlumniInfo {
     id?: number;
@@ -750,7 +760,7 @@ const keepPending = () => {
         <!-- Keep Pending Modal -->
 <div
     v-if="showPendingModal && pendingAlumni"
-    class="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/50 p-4"
+    class="fixed inset-0 z-60 flex items-center justify-center bg-slate-900/50 p-4"
     @click.self="closePendingModal"
 >
     <div class="w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl">

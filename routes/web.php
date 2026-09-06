@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AlumniInfoController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\AlumniReview;
@@ -82,6 +83,13 @@ Route::get('/alumni/pending', [AlumniController::class, 'pending'])->name('alumn
 Route::patch('/alumni/{user}/approve',[AlumniController::class, 'approve'])->name('alumni.approve');
 Route::patch('/alumni/{user}/reject',[AlumniController::class, 'reject'])->name('alumni.reject');
 Route::patch('/alumni/{user}/pending', [AlumniController::class, 'keepPending'])->name('alumni.pending.update');
+
+
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+
+
+
 });
 
 

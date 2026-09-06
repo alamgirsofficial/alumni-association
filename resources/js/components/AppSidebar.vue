@@ -1,7 +1,21 @@
-
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, FolderGit2, LayoutGrid, Users, List } from '@lucide/vue';
+import { 
+    LayoutGrid,
+     Users,
+     List,
+     CalendarDays,
+     FileText,
+     Images,
+     UserRoundCog,
+     Mail,
+     BarChart,
+     Settings,
+     UserCircle,
+     PlusCircle,
+     ListTodo,
+     ClipboardList,
+ } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
@@ -24,31 +38,33 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
-{
-    title: 'Alumni',
-    href: '#',
-    icon: Users,
-    items: [
-        {
-            title: 'Alumni List',
-            href: '/alumni',
-        },
-        {
-            title: 'Create Alumni',
-            href: '/alumni/create',
-            icon: List,
-        },        
-        {
-            title: 'Pending Alumni',
-            href: '/alumni/pending',
-        }
-    ],
-},
+    {
+        title: 'Alumni',
+        href: '#',
+        icon: Users,
+        items: [
+            {
+                title: 'Alumni List',
+                href: '/alumni',
+                icon: List,
+            },
+            {
+                title: 'Create Alumni',
+                href: '/alumni/create',
+                icon: PlusCircle,
+            },
+            {
+                title: 'Pending Alumni',
+                href: '/alumni/pending',
+                icon: ListTodo,
+            }
+        ],
+    },
 
     {
         title: 'Blogs',
-        href:'#',
-        icon: Users,
+        href: '#',
+        icon: FileText,
         items: [
             {
                 title: 'Blog List',
@@ -58,7 +74,7 @@ const mainNavItems: NavItem[] = [
                 title: 'Create Blog',
                 href: '/blog/create',
                 icon: List,
-            },        
+            },
             {
                 title: 'Edit Blog',
                 href: '/blog/edit',
@@ -67,22 +83,84 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Events',
-        href: dashboard(),
-        icon: Users,
+        href: '#',
+        icon: CalendarDays,
+        items: [
+            {
+                title: 'Event List',
+                href: '/event',
+                icon:List,
+            },
+            {
+                title: 'Create Event',
+                href: '/event/create',
+                icon: PlusCircle,
+            },
+            {
+                title: 'Edit Event',
+                href: '/event/edit',
+
+            }
+        ]
     },
+    {
+        title: 'Registrations',
+        href: '#',
+        icon: Users,
+        items: [
+            {
+                title: 'Registration List',
+                href: '/registration',
+            },
+            {
+                title: 'Pending Registration',
+                href: '/registration/create',
+                icon: List,
+            },
+        ]
+    },
+    {
+        title: 'Gallery',
+        href: '#',
+        icon: Images,
+    },
+    {
+        title: 'Committee',
+        href: '#',
+        icon: UserRoundCog,
+    },
+    {
+        title: 'Messages',
+        href: '#',
+        icon: Mail,
+    },
+    {
+        title: 'Report',
+        href: '#',
+        icon: BarChart,
+    },
+    {
+        title: 'Settings',
+        href: '#',
+        icon: Settings,
+    },
+    {
+        title: 'Profile',
+        href: '/profile',
+        icon: UserCircle,
+    },
+
+
+
 ];
 
 const footerNavItems: NavItem[] = [
-    {
-        title: 'Repository',
-        href: 'https://github.com/laravel/vue-starter-kit',
-        icon: FolderGit2,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#vue',
-        icon: BookOpen,
-    },
+    
+    // {
+    //     title: 'Repository',
+    //     href: 'https://github.com/laravel/vue-starter-kit',
+    //     icon: FolderGit2,
+    // },
 ];
 </script>
 

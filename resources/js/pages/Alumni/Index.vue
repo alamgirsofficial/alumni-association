@@ -1,12 +1,24 @@
 <script setup lang="ts">
-import { router } from '@inertiajs/vue3';
+import { router, Link } from '@inertiajs/vue3';
 import {
     Eye,
     Search,
     Users,
     X,
+    ArrowRight
 } from '@lucide/vue';
 import { computed, ref, watch } from 'vue';
+
+defineOptions({
+    layout: {
+        breadcrumbs: [
+            {
+                title: 'Alumni List',
+                // href: edit(),
+            },
+        ],
+    },
+});
 
 interface AlumniInfo {
     id?: number;
@@ -155,7 +167,7 @@ const getInitials = (name: string) => {
                         <h1
                             class="text-2xl font-bold tracking-tight text-slate-900"
                         >
-                            Alumni List
+                           Registered Alumni : <span> {{ alumni.total }}</span>
                         </h1>
 
                         <p class="mt-0.5 text-sm text-slate-500">
@@ -165,18 +177,14 @@ const getInitials = (name: string) => {
                 </div>
             </div>
 
-            <!-- Total -->
-            <div
-                class="rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
-            >
-                <p class="text-xs font-medium text-slate-500">
-                    Total Approved Alumni
-                </p>
-
-                <p class="mt-1 text-xl font-bold text-slate-900">
-                    {{ alumni.total }}
-                </p>
-            </div>
+            <!-- Create Buuton -->
+            <Link
+                    href="/alumni/create"
+                    class="inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
+                >
+                <span class="hidden sm:inline">Create Alumni</span>
+                <ArrowRight class="h-4 w-4" />
+                </Link>
         </div>
 
         <!-- Search -->
